@@ -18,7 +18,6 @@ public class Ilac {
     private Integer doz;  // günlük vücut kilogram başına mg değeri (mg/(kg.gün))
     private Periyot kullanimPeriyodu;
     private Integer kullanimSayisi;
-
     @ManyToOne
     @JoinColumn(name = "hastalik_id")
     private Hastalik kullanilanHastalik;
