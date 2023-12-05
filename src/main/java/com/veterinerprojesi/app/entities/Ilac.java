@@ -1,5 +1,6 @@
 package com.veterinerprojesi.app.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.veterinerprojesi.app.enums.Periyot;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.Data;
 @Entity
 @Table(name = "ilaclar")
 @Data
+@JsonIgnoreProperties(value = "kullanilanHastalik",allowGetters = false)
 public class Ilac {
 
     @Id
