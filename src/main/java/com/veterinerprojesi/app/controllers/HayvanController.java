@@ -23,13 +23,15 @@ public class HayvanController {
         return hayvanServisi.hayvanlarinListesiniOlustur();
     }
 
-    @GetMapping("/getByTur")
-    public Hayvan getByTur(@RequestParam String hayvanTur){
+    @GetMapping("/getAllByTur")
+    public List<Hayvan> getAllByTur(@RequestParam String hayvanTur){
         return hayvanServisi.getByTur(hayvanTur);
     }
 
     @PostMapping("/kaydet")
-    public String save(Hayvan yeniHayvan){
+    public String save(@RequestBody Hayvan yeniHayvan){
         return hayvanServisi.save(yeniHayvan);
     }
+
+
 }

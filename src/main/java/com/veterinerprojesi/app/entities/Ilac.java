@@ -1,5 +1,6 @@
 package com.veterinerprojesi.app.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.veterinerprojesi.app.enums.Periyot;
 import jakarta.persistence.*;
