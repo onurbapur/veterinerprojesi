@@ -21,6 +21,7 @@ public class Hayvan {
     private Integer omur;
     private String yasamYeri;
     private Boolean zehirliMi;
+    private String aciklama;
 
     @ManyToMany
     @JoinTable(name = "hayvan_hastaliklari")

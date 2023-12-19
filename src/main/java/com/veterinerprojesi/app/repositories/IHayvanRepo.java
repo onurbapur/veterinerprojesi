@@ -7,7 +7,8 @@ import java.util.List;
 
 public interface IHayvanRepo extends JpaRepository<Hayvan, Integer> {
     List<Hayvan> getAllByTur(String hayvanTur);
-
     List<Hayvan> getAllByCins(String cins);
+    List<Hayvan> getAllByAyakSayisi(Integer istekAyakSayisi);
+
 
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayvan</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+
+        <caption>Hayvanın Tüm Özellikleri</caption>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td th:text="${eleman.id}">sgvsdv</td>
+            </tr>
+            <tr>
+                <td>Cins</td>
+                <td th:text="${eleman.cins}">sdfbdsfb</td>
+            </tr>
+            <tr>
+                <td>Tür</td>
+                <td th:text="${eleman.tur}">dfbdfb</td>
+            </tr>
+
+            <tr>
+                <td>Ayak Sayısı</td>
+                <td th:text="${eleman.ayakSayisi}"></td>
+            </tr>
+            <tr>
+                <td>Üreme Şekli</td>
+                <td th:text="${eleman.uremeSekli}"></td>
+            </tr>
+            <tr>
+                <td>Ortalama Ömrü</td>
+                <td th:text="${eleman.omur}"></td>
+            </tr>
+            <tr>
+                <td>Yaşam Yeri</td>
+                <td th:text="${eleman.yasamYeri}"></td>
+            </tr>
+            <tr>
+                <td>Açıklama</td>
+                <td th:text="${eleman.aciklama}"></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
+
+<!--
+
+    private Integer id;
+    private String cins;
+    private String tur;
+    private Integer ayakSayisi;
+    private Ureme uremeSekli;
+    private Integer omur;
+    private String yasamYeri;
+    private Boolean zehirliMi;
+    private String aciklama;
+
+    @ManyToMany
+    @JoinTable(name = "hayvan_hastaliklari")
+    private List<Hastalik> hastaliklari;
+
+-->

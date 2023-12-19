@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<br>
+<br>
+
+<h2 style="text-align:center">HAYVANLAR</h2>
+<br>
+<br>
+
+
+<div th:each="eleman:${tumhayvanlar}" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title" th:text="${eleman.cins} + ' ' + ${eleman.tur}">Hayvan Ismi</h5>
+        <p6>Hastalıklar:</p6>
+        <ol>
+            <div th:each="hastalik:${eleman.hastaliklari}">
+                <li th:text="${hastalik.hastalikAdi}">hastalık ismi</li>
+                <p th:text="${hastalik.hastalikTehlikesi}">hastalık tehlike derecesi</p>
+            </div>
+        </ol>
+
+        <p th:text="${eleman.aciklama}" class="card-text">açıklama</p>
+        <a  th:href="@{/hayvan/{hayv_id}(hayv_id = ${eleman.id})}" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+</body>
+</html>

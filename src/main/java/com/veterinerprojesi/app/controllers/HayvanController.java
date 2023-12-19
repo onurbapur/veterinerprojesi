@@ -1,8 +1,8 @@
 package com.veterinerprojesi.app.controllers;
 
 import com.veterinerprojesi.app.entities.Hayvan;
+import com.veterinerprojesi.app.reqBodies.HastalikHayvanBody;
 import com.veterinerprojesi.app.services.HayvanServisi;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +11,8 @@ import java.util.List;
 @RequestMapping("/hayvan")
 public class HayvanController {
 
-    HayvanServisi hayvanServisi;
+    private final HayvanServisi hayvanServisi;
 
-    @Autowired
     public HayvanController(HayvanServisi hayvanServisi) {
         this.hayvanServisi = hayvanServisi;
     }
@@ -33,5 +32,19 @@ public class HayvanController {
         return hayvanServisi.save(yeniHayvan);
     }
 
+    @GetMapping("/ayakSayisi")
+    public List<Hayvan> getAllByAyakSayisi(@RequestParam Integer istakAyakSayisi){
+        return hayvanServisi.getAllByAyakSayisi(istakAyakSayisi);
+    }
+
+    @GetMapping("asd/{hayv_id}")
+    public Hayvan findOneById(@PathVariable Integer hayv_id){
+        return hayvanServisi.findOneById(hayv_id);
+    }
+
+    @PutMapping("hastalikEkle")
+    public String hayvanaHastalikEkleme(@RequestBody HastalikHayvanBody hastalikHayvanBody){
+        return hayvanServisi.hayvanaHastalikEkleme(hastalikHayvanBody);
+    }
 
 }
